@@ -26,7 +26,7 @@ describe('taskListReducer', () => {
       id: id
     };
 
-    expect(taskListReducer({}), action).toEqual({
+    expect(taskListReducer({}, action)).toEqual({
       [id] : {
         name: name,
         description: description,
