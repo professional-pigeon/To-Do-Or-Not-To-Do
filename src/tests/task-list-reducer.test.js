@@ -56,7 +56,7 @@ describe('taskListReducer', () => {
 
   test('Should delete a task from the task list', () => {
     action= {
-      type: 'DELETE_TICKET',
+      type: 'DELETE_TASK',
       id: 1
     };
     expect(taskListReducer(currentState, action)).toEqual({
@@ -69,5 +69,5 @@ describe('taskListReducer', () => {
       }
     })
   })
-  
+
 });

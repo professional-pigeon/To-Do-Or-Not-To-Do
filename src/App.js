@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import DisplayControl from './display/displayControl.js'
 
