@@ -10,11 +10,25 @@ class DisplayControl extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  // addTask = () => {
+  //   const { dispatch } = this.props
+  //   let action = {
+  //     type: 'ADD_TASK',
+  //     name: "test",
+  //     description: "test description",
+  //     dueDate: "test date",
+  //     created: "teset date again",
+  //     id: 10
+  //     }
+  //     dispatch(action)
+  // }
+
   render() {
     return (
       <React.Fragment>
         <HeaderControl />
-        <ListControl taskList={this.props.taskList} />
+        <ListControl taskList={this.props.taskList}/>
         <SidebarControl />
       </React.Fragment>
     )
