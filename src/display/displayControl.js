@@ -4,6 +4,7 @@ import HeaderControl from './header/HeaderControl'
 import ListControl from './list/ListControl'
 import SidebarControl from './sidebar/SidebarControl'
 import { connect } from 'react-redux'
+import { Container, Row, Col } from 'react-bootstrap'
 
 class DisplayControl extends React.Component {
 
@@ -11,26 +12,19 @@ class DisplayControl extends React.Component {
     super(props);
   }
 
-  // addTask = () => {
-  //   const { dispatch } = this.props
-  //   let action = {
-  //     type: 'ADD_TASK',
-  //     name: "test",
-  //     description: "test description",
-  //     dueDate: "test date",
-  //     created: "teset date again",
-  //     id: 10
-  //     }
-  //     dispatch(action)
-  // }
-
   render() {
     return (
-      <React.Fragment>
+      <Container>
         <HeaderControl />
-        <ListControl taskList={this.props.taskList}/>
-        <SidebarControl />
-      </React.Fragment>
+        <Row>
+          <Col xs={4}>
+            <SidebarControl />
+          </Col>
+          <Col xs={6}>
+            <ListControl taskList={this.props.taskList} />
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }

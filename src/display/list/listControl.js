@@ -1,17 +1,13 @@
 import React from "react"
-import { Container, Form, Button } from "react-bootstrap"
-import AddTask from './AddTask'
-import InProgress from './InProgress'
+import { Container } from "react-bootstrap"
+import ToDo from './ToDo'
 
 
 
 function ListControl({ taskList }) {
 
   return (
-    <Container>
-      <AddTask />
-      <InProgress taskList={taskList} />
-    </Container>
+    <ToDo taskList={taskList} />
   )
 }
 

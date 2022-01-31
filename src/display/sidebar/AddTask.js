@@ -32,7 +32,6 @@ function AddTask({}) {
   }
 
   return (
-    <Container>
       <Form onSubmit={addTask}>
         <Form.Group controlId="taskName">
           <Form.Label>Name of task:</Form.Label>
@@ -48,7 +47,6 @@ function AddTask({}) {
         </Form.Group>
         <Button variant="primary" type="submit">Create task</Button>
       </Form>
-    </Container>
   )
 }
 

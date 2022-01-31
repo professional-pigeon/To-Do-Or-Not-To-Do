@@ -1,8 +1,11 @@
+import React from "react"
+import { Container, Form, Button } from "react-bootstrap"
+import AddTask from './AddTask'
+
+
 function SidebarControl() {
   return (
-    <div>
-      <p>Sidebar to go somewhere to the side</p>
-    </div>
+      <AddTask />
   )
 }
 
