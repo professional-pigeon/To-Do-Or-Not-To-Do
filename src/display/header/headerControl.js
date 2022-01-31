@@ -1,9 +1,10 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import './HeaderControl.css'
 
 function HeaderControl() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg" id="navbarStyle">
       <Container>
         <Navbar.Brand href="#home">To-Do List</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

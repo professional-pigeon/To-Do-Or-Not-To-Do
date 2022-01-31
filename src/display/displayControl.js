@@ -15,7 +15,6 @@ class DisplayControl extends React.Component {
   render() {
     return (
       <Container>
-        <HeaderControl />
         <Row>
           <Col xs={4}>
             <SidebarControl />
