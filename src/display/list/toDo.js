@@ -4,11 +4,6 @@ import TaskCard from './TaskCard'
 
 
 function ToDo({ taskList }) {
-
-  // if (taskList && Object.keys(taskList).length === 0) {
-  //   TaskCard
-  // }
-  
   return (
       taskList && Object.keys(taskList).length === 0 
         ? <TaskCard name={"No Task"} description={"No Description"} dueDate={"No Date"} id={0} />
