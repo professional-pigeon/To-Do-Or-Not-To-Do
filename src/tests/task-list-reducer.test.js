@@ -72,19 +72,17 @@ describe('taskListReducer', () => {
 
   test('Should edit a task from the task list', () => {
     action={
-      type: 'EDIT_TASK',
+      type: 'ADD_TASK',
       name: "New Name",
       description: "Well this is a change",
       dueDate: "Timestamp adjusted",
-      created: "TimeStamp",
       id: 1
     };
     expect(taskListReducer(currentState, action)).toEqual({
       1:  {
         name: "New Name",
         description: "Well this is a change",
-        dueDate: "Timestamp2",
-        created: "Timestamp",
+        dueDate: "Timestamp adjusted",
         id: 1
       },
       2: {
