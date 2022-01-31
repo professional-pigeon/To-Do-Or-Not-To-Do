@@ -14,10 +14,9 @@ function InProgress({ taskList }) {
   }
   return (
     <Container>
-      {Object.keys(taskList).map((id, key) => (
-                <TaskCard name={taskList[id].name} description={taskList[id].description} dueDate={taskList[id].dueDate} id={id} />
-
-          ))}
+      {Object.values(taskList).map((value, key) => (
+        <TaskCard name={value.name} description={value.description} dueDate={value.dueDate} id={value.id} />
+      ))}
     </Container>
   )
 }
