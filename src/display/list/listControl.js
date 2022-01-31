@@ -8,6 +8,15 @@ import { useDispatch } from 'react-redux'
 function ListControl({ taskList }) {
   const dispatch = useDispatch()
 
+  
+  function displayDate() {
+    const today = new Date()
+    let month = (today.getMonth() + 1)
+    if (month < 10) {
+      month = "0" + month
+    }
+    return today.getFullYear() + '-' + (month) + '-' + today.getDate();
+  }
   function addTask(event) {
     event.preventDefault()
     let action = {
@@ -38,7 +47,7 @@ function ListControl({ taskList }) {
         </Form.Group>
         <Form.Group controlId="tasDate">
           <Form.Label>Name of task:</Form.Label>
-          <Form.Control type="date" name="dueDate" required/>
+          <Form.Control type="date" name="dueDate" defaultValue={displayDate()} required/>
         </Form.Group>
         <Button variant="primary" type="submit">Create task</Button>
       </Form>
