@@ -55,11 +55,38 @@ describe('taskListReducer', () => {
   });
 
   test('Should delete a task from the task list', () => {
-    action= {
+    action={
       type: 'DELETE_TASK',
       id: 1
     };
     expect(taskListReducer(currentState, action)).toEqual({
+      2: {
+        name: "Feed Squirrels",
+        description: "I tried to keep them out of the bird feeder. I'm now trying appeasement strategies.",
+        dueDate: "some date in a time format",
+        created: "Timestamp",
+        id: 2
+      }
+    })
+  })
+
+  test('Should edit a task from the task list', () => {
+    action={
+      type: 'EDIT_TASK',
+      name: "New Name",
+      description: "Well this is a change",
+      dueDate: "Timestamp adjusted",
+      created: "TimeStamp",
+      id: 1
+    };
+    expect(taskListReducer(currentState, action)).toEqual({
+      1:  {
+        name: "New Name",
+        description: "Well this is a change",
+        dueDate: "Timestamp2",
+        created: "Timestamp",
+        id: 1
+      },
       2: {
         name: "Feed Squirrels",
         description: "I tried to keep them out of the bird feeder. I'm now trying appeasement strategies.",
