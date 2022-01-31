@@ -1,8 +1,7 @@
 import React from "react"
-import { v4 } from 'uuid'
 import { Container, Form, Button } from "react-bootstrap"
-import { useDispatch } from 'react-redux'
-import AddTask from './addTask'
+import AddTask from './AddTask'
+import InProgress from './InProgress'
 
 
 
@@ -11,6 +10,7 @@ function ListControl({ taskList }) {
   return (
     <Container>
       <AddTask />
+      <InProgress taskList={taskList} />
     </Container>
   )
 }

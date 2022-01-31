@@ -1,5 +1,5 @@
 import './App.css';
-import DisplayControl from './display/displayControl.js'
+import DisplayControl from './display/DisplayControl.js'
 
 function App() {
   return (

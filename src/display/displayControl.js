@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react'
 import React from 'react'
-import HeaderControl from './header/headerControl'
-import ListControl from './list/listControl'
-import SidebarControl from './sidebar/sidebarControl'
+import HeaderControl from './header/HeaderControl'
+import ListControl from './list/ListControl'
+import SidebarControl from './sidebar/SidebarControl'
 import { connect } from 'react-redux'
 
 class DisplayControl extends React.Component {
