@@ -15,9 +15,6 @@ export default (state = {}, action) => {
         let newState = { ...state };
         delete newState[id];
         return newState
-      case 'EDIT_TASK':
-        lnewState = { ...state };
-        return newState
     default:
       return state;
   }
