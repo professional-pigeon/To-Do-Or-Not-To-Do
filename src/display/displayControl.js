@@ -6,6 +6,7 @@ import ToDo from './list/ToDo'
 import InProgress from './list/InProgress'
 import Done from './list/Done'
 
+
 class DisplayControl extends React.Component {
 
   constructor(props) {
@@ -17,12 +18,15 @@ class DisplayControl extends React.Component {
       <Container>
         <Row>
           <Col>
+            <h4>To Do List</h4>
             <ToDo taskList={this.props.taskList} />
           </Col>
           <Col>
+            <h4>In Progress</h4>
             <InProgress taskList={this.props.taskList} />
           </Col>
           <Col>
+            <h4>Completed</h4>
             <Done taskList={this.props.taskList} />
           </Col>
         </Row>
@@ -41,3 +45,5 @@ const mapStateToProps = state => {
 DisplayControl = connect(mapStateToProps)(DisplayControl)
 
 export default DisplayControl
+
+// look into carddeck for cards
