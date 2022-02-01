@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react'
 import React from 'react'
-import HeaderControl from './header/HeaderControl'
-import ListControl from './list/ListControl'
-import SidebarControl from './sidebar/SidebarControl'
 import { connect } from 'react-redux'
 import { Container, Row, Col } from 'react-bootstrap'
+import ToDo from './list/ToDo'
+import InProgress from './list/InProgress'
+import Done from './list/Done'
 
 class DisplayControl extends React.Component {
 
@@ -16,11 +16,14 @@ class DisplayControl extends React.Component {
     return (
       <Container>
         <Row>
-          <Col xs={4}>
-            <SidebarControl />
+          <Col>
+            <ToDo taskList={this.props.taskList} />
           </Col>
-          <Col xs={6}>
-            <ListControl taskList={this.props.taskList} />
+          <Col>
+            <InProgress taskList={this.props.taskList} />
+          </Col>
+          <Col>
+            <Done taskList={this.props.taskList} />
           </Col>
         </Row>
       </Container>
