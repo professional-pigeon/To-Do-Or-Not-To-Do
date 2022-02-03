@@ -3,8 +3,6 @@ import { v4 } from 'uuid'
 import { Container, Form, Button } from "react-bootstrap"
 import { useDispatch } from 'react-redux'
 
-
-
 function AddTask({}) {
   const dispatch = useDispatch()
 
@@ -24,10 +22,10 @@ function AddTask({}) {
       name: event.target.name.value,
       description: event.target.description.value,
       dueDate: event.target.dueDate.value,
+      status: 'ToDo',
       created: Date().toLocaleString(),
       id: v4(),
       }
-      console.log(action)
       dispatch(action)
   }
 
