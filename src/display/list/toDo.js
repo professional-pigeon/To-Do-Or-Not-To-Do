@@ -7,7 +7,7 @@ function ToDo({ taskList }) {
     taskList && Object.keys(taskList).length === 0 
       ? <TaskCard name={"No Task"} description={"No Description"} dueDate={"No Date"} id={0} />
       : Object.values(taskList).map((value, key) => (
-        <TaskCard created={value.created} name={value.name} description={value.description} dueDate={value.dueDate} id={value.id} />
+        <TaskCard key={key} created={value.created} name={value.name} description={value.description} status={value.status} dueDate={value.dueDate} id={value.id} />
       ))
   )
 }

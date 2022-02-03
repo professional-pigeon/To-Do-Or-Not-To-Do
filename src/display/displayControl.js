@@ -14,21 +14,50 @@ class DisplayControl extends React.Component {
     super(props);
   }
 
+  createToDo(taskList) {
+    let toDo = {}
+    Object.values(taskList).map((value, key) => (
+      value.status === 0 ? toDo[value.id] = { ...value } : null
+    ))
+    return toDo
+  }
+
+  createInProgress(taskList) {
+    let toDo = {}
+    Object.values(taskList).map((value, key) => (
+      value.status === 1 ? toDo[value.id] = { ...value } : null
+    ))
+    return toDo
+  }
+
+  createDone(taskList) {
+    let toDo = {}
+    Object.values(taskList).map((value, key) => (
+      value.status === 2 ? toDo[value.id] = { ...value } : null
+    ))
+    return toDo
+  }
+
   render() {
+    const taskList = this.props.taskList
+    console.log(taskList)
+    const toDo = this.createToDo(taskList)
+    const inProgress =this.createInProgress(taskList)
+    const done = this.createDone(taskList)
     return (
       <Container>
         <Row>
           <Col className="cardHolder toDo">
             <h4>To Do List</h4>
-            <ToDo taskList={this.props.taskList} />
+            <ToDo taskList={toDo} />
           </Col>
           <Col className="cardHolder inProgress">
             <h4>In Progress</h4>
-            <InProgress taskList={this.props.taskList} />
+            <InProgress taskList={inProgress} />
           </Col>
           <Col className="cardHolder done">
             <h4>Completed</h4>
-            <Done taskList={this.props.taskList} />
+            <Done taskList={done} />
           </Col>
         </Row>
       </Container>

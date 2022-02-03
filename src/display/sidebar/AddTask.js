@@ -22,7 +22,7 @@ function AddTask({}) {
       name: event.target.name.value,
       description: event.target.description.value,
       dueDate: event.target.dueDate.value,
-      status: 'ToDo',
+      status: 0,
       created: Date().toLocaleString(),
       id: v4(),
       }

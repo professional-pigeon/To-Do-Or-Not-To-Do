@@ -7,9 +7,6 @@ function TaskCard(props) {
   const dispatch = useDispatch()
   const [edit, setEdit] = useState(false)
 
-  console.log(props)
-
-
   function deleteTask(taskID) {
     let action = {
       type: "DELETE_TASK",
@@ -24,12 +21,27 @@ function TaskCard(props) {
       name: event.target.name.value,
       description: event.target.description.value,
       dueDate: event.target.dueDate.value,
+      status: props.status,
       created: props.created,
       id: props.id,
     }
-    console.log("lets see it", action)
     dispatch(action)
     setEdit(false)
+  }
+
+  function changeStatus() {
+    let newStatus = props.status + 1
+    console.log(newStatus, props.status)
+    let action = {
+      type: 'ADD_TASK',
+      name: props.name,
+      description: props.description,
+      dueDate: props.dueDate,
+      status: newStatus,
+      created: props.created,
+      id: props.id,
+    }
+    dispatch(action)
   }
 
   if (edit) {
@@ -64,6 +76,7 @@ function TaskCard(props) {
             <Card.Text>dueDate: {props.dueDate}</Card.Text>
             <Button onClick={() => deleteTask(props.id)}>Delete</Button>
             <Button onClick={() => setEdit(true)}>edit</Button>
+            <Button onClick={() => changeStatus()}>Change status</Button>
           </Card.Body>
         </Card>
     )
