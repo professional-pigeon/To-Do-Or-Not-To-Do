@@ -39,7 +39,7 @@ function AddTask({}) {
           <Form.Label>Description of Task:</Form.Label>
           <Form.Control type="text" name="description" defaultValue="Let's finally tackle this widget!" required/>
         </Form.Group>
-        <Form.Group controlId="tasDate">
+        <Form.Group controlId="taskDate">
           <Form.Label>Name of task:</Form.Label>
           <Form.Control type="date" name="dueDate" defaultValue={displayDate()} required/>
         </Form.Group>
