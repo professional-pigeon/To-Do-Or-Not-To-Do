@@ -14,36 +14,25 @@ class DisplayControl extends React.Component {
     super(props);
   }
 
-  createToDo(taskList) {
-    let toDo = {}
-    Object.values(taskList).map((value, key) => (
-      value.status === 0 ? toDo[value.id] = { ...value } : null
-    ))
-    return toDo
-  }
-
-  createInProgress(taskList) {
-    let toDo = {}
-    Object.values(taskList).map((value, key) => (
-      value.status === 1 ? toDo[value.id] = { ...value } : null
-    ))
-    return toDo
-  }
-
-  createDone(taskList) {
-    let toDo = {}
-    Object.values(taskList).map((value, key) => (
-      value.status === 2 ? toDo[value.id] = { ...value } : null
-    ))
-    return toDo
+  taskSplit(taskList, toDo, inProgress, done) {
+    Object.values(taskList).map(value => {
+      if (value.status === 0) {
+        toDo[value.id] = { ...value }
+      } else if (value.status === 1) {
+        inProgress[value.id] = { ...value }
+      } else {
+        done[value.id] = { ...value }
+      }
+    })
+    return toDo, inProgress, done
   }
 
   render() {
     const taskList = this.props.taskList
-    console.log(taskList)
-    const toDo = this.createToDo(taskList)
-    const inProgress =this.createInProgress(taskList)
-    const done = this.createDone(taskList)
+    let toDo = {}
+    let inProgress = {}
+    let done = {}
+    this.combineReturn(taskList, toDo, inProgress, done)
     return (
       <Container>
         <Row>
