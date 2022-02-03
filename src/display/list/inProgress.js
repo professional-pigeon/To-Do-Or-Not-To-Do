@@ -4,13 +4,13 @@ import TaskCard from './TaskCard'
 
 
 function InProgress({ taskList }) {
-  return (
-      taskList && Object.keys(taskList).length === 0 
-        ? <TaskCard name={"No Task"} description={"No Description"} dueDate={"No Date"} id={0} />
-        : Object.values(taskList).map((value, key) => (
-          <TaskCard key={key} status={value.status} created={value.created} name={value.name} description={value.description} dueDate={value.dueDate} id={value.id} />
-          ))
-  )
-}
+  if (taskList && Object.keys(taskList).length === 0) {
+    return (
+      Object.values(taskList).map((value, key) => (
+          <TaskCard key={key} created={value.created} name={value.name} description={value.description} status={value.status} dueDate={value.dueDate} id={value.id} />
+        ))
+      )
+    }
+  }
 
 export default InProgress

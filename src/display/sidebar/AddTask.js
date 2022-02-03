@@ -1,6 +1,6 @@
 import React from "react"
 import { v4 } from 'uuid'
-import { Container, Form, Button } from "react-bootstrap"
+import { Container, Form, Button, Card } from "react-bootstrap"
 import { useDispatch } from 'react-redux'
 
 function AddTask({}) {
@@ -30,21 +30,26 @@ function AddTask({}) {
   }
 
   return (
-      <Form onSubmit={addTask}>
-        <Form.Group controlId="taskName">
-          <Form.Label>Name of task:</Form.Label>
-          <Form.Control type="text" name="name" defaultValue="Make Widget" required/>
-        </Form.Group>
-        <Form.Group controlId="taskDescription">
-          <Form.Label>Description of Task:</Form.Label>
-          <Form.Control type="text" name="description" defaultValue="Let's finally tackle this widget!" required/>
-        </Form.Group>
-        <Form.Group controlId="taskDate">
-          <Form.Label>Name of task:</Form.Label>
-          <Form.Control type="date" name="dueDate" defaultValue={displayDate()} required/>
-        </Form.Group>
-        <Button variant="primary" type="submit">Create task</Button>
-      </Form>
+    <Form onSubmit={addTask}>
+    <Card style={{ width: '18rem', margin: 'auto' }}>
+      <Card.Body>
+        <Card.Title>Add Card</Card.Title>
+          <Form.Group controlId="taskName">
+            <Form.Label><Card.Text>Name:</Card.Text></Form.Label>
+            <Form.Control type="text" name="name" required/>
+          </Form.Group>
+          <Form.Group controlId="taskDescription">
+            <Form.Label>Description of Task:</Form.Label>
+            <Form.Control type="text" name="description" required/>
+          </Form.Group>
+          <Form.Group controlId="taskDate">
+            <Form.Label>Date Due</Form.Label>
+            <Form.Control type="date" name="dueDate" required/>
+          </Form.Group>
+        <Button variant="primary" type="submit">Create new Task</Button>
+      </Card.Body>
+    </Card>
+  </Form>
   )
 }
 
