@@ -32,7 +32,7 @@ class DisplayControl extends React.Component {
     let toDo = {}
     let inProgress = {}
     let done = {}
-    this.combineReturn(taskList, toDo, inProgress, done)
+    this.taskSplit(taskList, toDo, inProgress, done)
     return (
       <Container>
         <Row>
