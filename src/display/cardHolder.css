@@ -1,0 +1,8 @@
+.cardHolder {
+  background-color: coral;
+  display: block;
+  border-style: solid;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}

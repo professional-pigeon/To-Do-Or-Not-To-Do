@@ -16,7 +16,7 @@ function TaskCard({ name, description, dueDate, id }) {
   }
 
   return (
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem', margin: 'auto' }}>
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>Description: {description}</Card.Text>
