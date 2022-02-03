@@ -63,6 +63,7 @@ function TaskCard(props) {
                 <Form.Control type="date" name="dueDate" defaultValue={props.dueDate} required/>
               </Form.Group>
             <Button variant="primary" type="submit">Edit task</Button>
+            <Button onClick={() => deleteTask(props.id)}>Delete</Button>
           </Card.Body>
         </Card>
       </Form>
@@ -74,7 +75,6 @@ function TaskCard(props) {
             <Card.Title>{props.name}</Card.Title>
             <Card.Text>Description: {props.description}</Card.Text>
             <Card.Text>dueDate: {props.dueDate}</Card.Text>
-            <Button onClick={() => deleteTask(props.id)}>Delete</Button>
             <Button onClick={() => setEdit(true)}>edit</Button>
             <Button onClick={() => changeStatus()}>Change status</Button>
           </Card.Body>
