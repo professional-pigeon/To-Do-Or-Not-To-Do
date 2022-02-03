@@ -8,6 +8,7 @@ describe('taskListReducer', () => {
     description: "Must we always fidget over this widget? Let's not ditch it. Let's fix it and raise our resolution digits.",
     dueDate: "some date in a time format",
     created: "Timestamp",
+    status: 'ToDo',
     id: 1
   }
 
@@ -17,6 +18,7 @@ describe('taskListReducer', () => {
       description: "Must we always fidget over this widget? Let's not ditch it. Let's fix it and raise our resolution digits.",
       dueDate: "some date in a time format",
       created: "Timestamp",
+      status: 'ToDo',
       id: 1
     },
     2: {
@@ -24,6 +26,7 @@ describe('taskListReducer', () => {
       description: "I tried to keep them out of the bird feeder. I'm now trying appeasement strategies.",
       dueDate: "some date in a time format",
       created: "Timestamp",
+      status: 'ToDo',
       id: 2
     }
   }
@@ -33,13 +36,14 @@ describe('taskListReducer', () => {
   });
 
   test('Should add a task to the mainTaskList', () => {
-    const { name, description, dueDate, created, id } = taskData;
+    const { name, description, dueDate, created, status, id } = taskData;
     action = {
       type: 'ADD_TASK',
       name: name,
       description: description,
       dueDate: dueDate,
       created: created,
+      status: status,
       id: id
     };
 
@@ -49,6 +53,7 @@ describe('taskListReducer', () => {
         description: description,
         dueDate: dueDate,
         created: created,
+        status: status,
         id: id
       }
     });
@@ -65,6 +70,7 @@ describe('taskListReducer', () => {
         description: "I tried to keep them out of the bird feeder. I'm now trying appeasement strategies.",
         dueDate: "some date in a time format",
         created: "Timestamp",
+        status: "ToDo",
         id: 2
       }
     })
@@ -76,6 +82,8 @@ describe('taskListReducer', () => {
       name: "New Name",
       description: "Well this is a change",
       dueDate: "Timestamp adjusted",
+      status: "InProgress",
+      created: "TimeStamp",
       id: 1
     };
     expect(taskListReducer(currentState, action)).toEqual({
@@ -83,6 +91,8 @@ describe('taskListReducer', () => {
         name: "New Name",
         description: "Well this is a change",
         dueDate: "Timestamp adjusted",
+        status: "InProgress",
+        created: "TimeStamp",
         id: 1
       },
       2: {
@@ -90,6 +100,7 @@ describe('taskListReducer', () => {
         description: "I tried to keep them out of the bird feeder. I'm now trying appeasement strategies.",
         dueDate: "some date in a time format",
         created: "Timestamp",
+        status: "ToDo",
         id: 2
       }
     })

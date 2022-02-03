@@ -1,5 +1,5 @@
 export default (state = {}, action) => {
-  const { name, description, dueDate, created, id } = action;
+  const { name, description, dueDate, created, status, id } = action;
   switch (action.type) {
     case 'ADD_TASK':
       return Object.assign({}, state, {
@@ -8,6 +8,7 @@ export default (state = {}, action) => {
             description: description,
             dueDate: dueDate,
             created: created,
+            status: status,
             id: id
           }
       });
