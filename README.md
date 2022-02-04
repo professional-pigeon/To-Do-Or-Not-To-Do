@@ -1,15 +1,4 @@
-Okay, need an object controlled through Redux that represents a task
+Okay CSS planning
 
-[
-  {
-    name: x,
-    dueDate: x,
-    created: x,
-    description: x,
-    id: x,
-  }
-]
+App.js div > DisplayControl.js Container and a Row > Three lists Col and div > Cards.js and AddTask.js Card element no div.
 
-let Task Name = property name
-
-Redux state 
