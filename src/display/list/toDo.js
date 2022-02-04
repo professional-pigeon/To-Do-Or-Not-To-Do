@@ -27,9 +27,6 @@ function ToDo({ taskList }) {
     () => ({
       accept: ItemTypes.CARD,
       drop: (item) => changeStatus(item, 0),
-      collect: monitor => ({
-        isOver: !!monitor.isOver(),
-      })
     }),
   )
 

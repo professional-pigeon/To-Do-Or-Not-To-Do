@@ -12,10 +12,6 @@ function TaskCard(props) {
   const [{ isDragging }, drag] = useDrag(() => ({
     type: ItemTypes.CARD,
     item: { props },
-    collect: monitor => ({
-      isDragging: !!monitor.isDragging(),
-      item: { props } 
-    }),
   }))
 
   function deleteTask(taskID) {

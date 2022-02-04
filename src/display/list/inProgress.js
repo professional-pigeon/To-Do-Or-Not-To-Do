@@ -27,9 +27,6 @@ function InProgress({ taskList }) {
     () => ({
       accept: ItemTypes.CARD,
       drop: (item) => changeStatus(item, 1),
-      collect: monitor => ({
-        isOver: !!monitor.isOver(),
-      })
     }),
   )
 

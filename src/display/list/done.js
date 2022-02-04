@@ -26,9 +26,6 @@ function Done({ taskList }) {
     () => ({
       accept: ItemTypes.CARD,
       drop: (item) => changeStatus(item, 2),
-      collect: monitor => ({
-        isOver: !!monitor.isOver(),
-      })
     }),
   )
   return (
