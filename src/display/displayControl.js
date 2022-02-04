@@ -36,16 +36,9 @@ class DisplayControl extends React.Component {
     return (
       <Container>
         <Row>
-          <Col className="cardHolder toDo">
-            <h4>To Do List</h4>
-            <AddTask />
-            { Object.keys(toDo).length > 0 ? <ToDo taskList={toDo} /> : null }
-          </Col>
-            { Object.keys(inProgress).length > 0 ? <InProgress taskList={inProgress} /> : null }
-          <Col className="cardHolder done">
-            <h4>Completed</h4>
-            { Object.keys(done).length > 0 ? <Done taskList={done} /> : null }
-          </Col>
+            <ToDo taskList={toDo} />
+            <InProgress taskList={inProgress} />
+            <Done taskList={done} />
         </Row>
       </Container>
     )

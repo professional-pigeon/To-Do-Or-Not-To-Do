@@ -23,7 +23,7 @@ function InProgress({ taskList }) {
     dispatch(action)
   }
 
-  const [{ isOver }, drop] = useDrop(
+  const [, drop] = useDrop(
     () => ({
       accept: ItemTypes.CARD,
       drop: (item) => changeStatus(item, 1),
