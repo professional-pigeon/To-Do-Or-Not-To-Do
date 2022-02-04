@@ -32,7 +32,7 @@ function Done({ taskList }) {
   <Col className="cardHolder done" ref={drop}>
     <h4>Done</h4>
     {Object.values(taskList).map((value, key) => (
-      <TaskCard draggable className="draggable" key={key} created={value.created} name={value.name} description={value.description} status={value.status} dueDate={value.dueDate} id={value.id} />
+      <TaskCard key={key} created={value.created} name={value.name} description={value.description} status={value.status} dueDate={value.dueDate} id={value.id} />
     ))}
   </Col>
   )
