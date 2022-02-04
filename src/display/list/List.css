@@ -2,6 +2,7 @@
   background-color: var(--color-one);
   display: block;
   border-style: solid;
+  border-color: var(--color-five);
   text-align: center;
   margin: 10px;
 }
