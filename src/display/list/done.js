@@ -4,6 +4,7 @@ import TaskCard from './TaskCard'
 import { useDispatch } from "react-redux"
 import { ItemTypes } from '../../constants'
 import { useDrop } from 'react-dnd'
+import './List.css'
 
 
 function Done({ taskList }) {

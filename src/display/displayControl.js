@@ -6,7 +6,6 @@ import ToDo from './list/ToDo'
 import InProgress from './list/InProgress';
 import Done from './list/Done';
 import AddTask from './list/AddTask';
-import './cardHolder.css';
 
 class DisplayControl extends React.Component {
 

@@ -5,6 +5,7 @@ import { ItemTypes } from '../../constants'
 import { useDrop } from 'react-dnd'
 import { useDispatch } from "react-redux"
 import AddTask from './AddTask'
+import './List.css'
 
 
 function ToDo({ taskList }) {
