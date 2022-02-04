@@ -1,10 +1,12 @@
 import React from "react"
 import { v4 } from 'uuid'
-import { Container, Form, Button, Card } from "react-bootstrap"
+import { Form, Button, Card } from "react-bootstrap"
 import { useDispatch } from 'react-redux'
+import { useState } from "react"
 
-function AddTask({}) {
+function AddTask() {
   const dispatch = useDispatch()
+  const [showAdd, setShowAdd] = useState(false)
 
   function displayDate() {
     const today = new Date()
@@ -27,8 +29,10 @@ function AddTask({}) {
       id: v4(),
       }
       dispatch(action)
+      setShowAdd(false)
   }
 
+  if (showAdd) {
   return (
     <Form onSubmit={addTask}>
     <Card style={{ width: '18rem', margin: 'auto' }}>
@@ -51,6 +55,16 @@ function AddTask({}) {
     </Card>
   </Form>
   )
+  } else {
+    return (
+    <Card style={{ width: '18rem', margin: 'auto' }}>
+      <Card.Body>
+        <Card.Title>Add Card</Card.Title>
+        <Button onClick={() => setShowAdd(true)}>Add A Task</Button>
+      </Card.Body>
+    </Card>
+    )
+  }
 }
 
 export default AddTask

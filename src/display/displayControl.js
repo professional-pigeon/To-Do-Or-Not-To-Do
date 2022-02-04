@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ToDo from './list/ToDo'
 import InProgress from './list/InProgress';
 import Done from './list/Done';
+import AddTask from './list/AddTask';
 import './cardHolder.css';
 
 
@@ -33,20 +34,22 @@ class DisplayControl extends React.Component {
     let inProgress = {}
     let done = {}
     this.taskSplit(taskList, toDo, inProgress, done)
+    console.log(toDo)
     return (
       <Container>
         <Row>
           <Col className="cardHolder toDo">
             <h4>To Do List</h4>
-            <ToDo taskList={toDo} />
+            <AddTask />
+            { Object.keys(toDo).length > 0 ? <ToDo taskList={toDo} /> : null }
           </Col>
           <Col className="cardHolder inProgress">
             <h4>In Progress</h4>
-            <InProgress taskList={inProgress} />
+            { Object.keys(inProgress).length > 0 ? <InProgress taskList={inProgress} /> : null }
           </Col>
           <Col className="cardHolder done">
             <h4>Completed</h4>
-            <Done taskList={done} />
+            { Object.keys(done).length > 0 ? <Done taskList={done} /> : null }
           </Col>
         </Row>
       </Container>
