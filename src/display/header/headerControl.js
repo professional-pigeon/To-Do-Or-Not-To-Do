@@ -6,7 +6,7 @@ function HeaderControl({ setAbout }) {
   return (
     <Navbar expand="lg" id="navbarStyle">
       <Container>
-        <Navbar.Brand href="#home">To-Do List</Navbar.Brand>
+        <Navbar.Brand onClick={()=> setAbout(false)}>To-Do List</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
