@@ -2,10 +2,21 @@ import React from "react"
 import { Card, Button, Form } from "react-bootstrap"
 import { useDispatch } from 'react-redux'
 import { useState } from "react"
+import { ItemTypes } from '../../constants'
+import { useDrag } from 'react-dnd'
 
 function TaskCard(props) {
   const dispatch = useDispatch()
   const [edit, setEdit] = useState(false)
+
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: ItemTypes.CARD,
+    item: { props },
+    collect: monitor => ({
+      isDragging: !!monitor.isDragging(),
+      item: { props } 
+    }),
+  }))
 
   function deleteTask(taskID) {
     let action = {
@@ -31,7 +42,6 @@ function TaskCard(props) {
 
   function changeStatus() {
     let newStatus = props.status + 1
-    console.log(newStatus, props.status)
     let action = {
       type: 'ADD_TASK',
       name: props.name,
@@ -70,6 +80,15 @@ function TaskCard(props) {
     )
   } else {
     return (
+      <div
+      ref={drag}
+      style={{
+        opacity: isDragging ? 0.5 : 1,
+        fontSize: 25,
+        fontWeight: 'bold',
+        cursor: 'move',
+      }}
+    >
         <Card style={{ width: '18rem', margin: 'auto' }}>
           <Card.Body>
             <Card.Title>{props.name}</Card.Title>
@@ -79,6 +98,7 @@ function TaskCard(props) {
             <Button onClick={() => changeStatus()}>Change status</Button>
           </Card.Body>
         </Card>
+    </div>
     )
   }
 }

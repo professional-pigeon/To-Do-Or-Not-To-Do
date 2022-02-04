@@ -8,7 +8,6 @@ import Done from './list/Done';
 import AddTask from './list/AddTask';
 import './cardHolder.css';
 
-
 class DisplayControl extends React.Component {
 
   constructor(props) {
@@ -34,7 +33,6 @@ class DisplayControl extends React.Component {
     let inProgress = {}
     let done = {}
     this.taskSplit(taskList, toDo, inProgress, done)
-    console.log(toDo)
     return (
       <Container>
         <Row>
@@ -43,10 +41,7 @@ class DisplayControl extends React.Component {
             <AddTask />
             { Object.keys(toDo).length > 0 ? <ToDo taskList={toDo} /> : null }
           </Col>
-          <Col className="cardHolder inProgress">
-            <h4>In Progress</h4>
             { Object.keys(inProgress).length > 0 ? <InProgress taskList={inProgress} /> : null }
-          </Col>
           <Col className="cardHolder done">
             <h4>Completed</h4>
             { Object.keys(done).length > 0 ? <Done taskList={done} /> : null }
