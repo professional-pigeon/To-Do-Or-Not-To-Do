@@ -5,7 +5,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ToDo from './list/ToDo'
 import InProgress from './list/InProgress';
 import Done from './list/Done';
-import AddTask from './list/AddTask';
 
 class DisplayControl extends React.Component {
 
