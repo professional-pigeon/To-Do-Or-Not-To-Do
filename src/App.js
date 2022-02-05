@@ -1,7 +1,7 @@
 import './App.css';
-import DisplayControl from './display/DisplayControl.js'
+import DisplayControl from './display/DisplayControl.js';
+import HeaderControl from './display/header/HeaderControl'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HeaderControl from './display/header/HeaderControl';
 import { Container, Row, Col } from 'react-bootstrap'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
