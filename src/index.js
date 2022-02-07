@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import rootReducer from './reducers/index'
 import { Provider } from 'react-redux'
-import './index.css'
 
 const store = createStore(rootReducer)
 
