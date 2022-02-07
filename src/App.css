@@ -8,7 +8,9 @@
 
 .App {
   text-align: center;
-  height: 100vh;
   background-color: var(--color-three);
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
 }
-
