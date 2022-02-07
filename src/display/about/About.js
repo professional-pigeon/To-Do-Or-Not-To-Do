@@ -11,7 +11,6 @@ function About({ setAbout }) {
         <ul>
           <li>A different view state for the todo, inProgress, and done columns</li>
           <li>Ability to add or delete a column</li>
-          <li>Some sort of graphing of information to see how long it takes you to take a task from start to finish</li>
         </ul>
         <p>Thank you for checking out my project</p>
         <Button onClick={() => setAbout(false)}>go back</Button>

@@ -53,7 +53,7 @@ function TaskCard(props) {
   if (edit) {
     return (
       <Form onSubmit={editTask}>
-        <Card style={{ width: '18rem', margin: 'auto' }}>
+        <Card>
           <Card.Body>
             <Card.Title>{props.name}</Card.Title>
               <Form.Group controlId="taskName">
