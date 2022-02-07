@@ -32,8 +32,8 @@ class DisplayControl extends React.Component {
     let done = {}
     this.taskSplit(taskList, toDo, inProgress, done)
     return (
-      <Container>
-        <Row>
+      <Container style={{ boxStyle: 'border-box', height: '85%'}}>
+        <Row className="h-100">
             <ToDo taskList={toDo} />
             <InProgress taskList={inProgress} />
             <Done taskList={done} />

@@ -1,16 +1,6 @@
-:root {
-  --color-one: rgb(204, 227, 229);
-  --color-two: rgb(239, 162, 111);
-  --color-three: rgb(113, 177, 183);
-  --color-four: rgb(198, 80, 40);
-  --color-five: rgb(114, 54, 23);
-}
 
 .App {
   text-align: center;
-  background-color: var(--color-three);
-  width: 100%;
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
+  height: 100%;
+  box-sizing: border-box;
 }
